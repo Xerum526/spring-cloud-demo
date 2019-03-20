@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.19.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.spgcld.demo</groupId>
+	<artifactId>spring-cloud-demo</artifactId>
+	<version>1.0.0</version>
+	<name>spring-cloud-demo</name>
+	<description>spring-cloud-demo</description>
+	<packaging>pom</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+        <commons-fileupload.version>1.2.2</commons-fileupload.version>
+        <commons-lang3.version>3.3.1</commons-lang3.version>
+        <commons-io.version>2.4</commons-io.version>
+        <commons-collections.version>3.2.2</commons-collections.version>
+        <fastjson.version>1.1.26</fastjson.version>
+        <mybatis.version>3.4.1</mybatis.version>
+        <mybatis-spring.version>1.3.0</mybatis-spring.version>
+        <druid.version>1.0.24</druid.version>
+        <activiti.version>5.21.0</activiti.version>
+        <cxf.version>3.0.0</cxf.version>
+        <cxf-rt.version>3.1.6</cxf-rt.version>
+        <oracle.version>7</oracle.version>
+        <fasterxml.uuid.version>3.1.4</fasterxml.uuid.version>
+        <github.miemiedev.version>1.2.17</github.miemiedev.version>
+        <common.codec.version>1.10</common.codec.version>
+        <servlet-api.version>3.1.0</servlet-api.version> 
+        <kaptcha.version>2.3.2</kaptcha.version>
+        <org.codehaus.jackson.version>1.9.13</org.codehaus.jackson.version>
+        <poi-ooxml.version>3.9</poi-ooxml.version>
+        <commons-beanutils.version>1.9.3</commons-beanutils.version>
+        <pinyin4j.version>2.5.1</pinyin4j.version>			
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>${commons-fileupload.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>${commons-collections.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>${common.codec.version}</version> 
+        </dependency>
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>${commons-beanutils.version}</version> 
+        </dependency>           
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>    
+        <!--对json格式的支持 -->
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>${org.codehaus.jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>   
+        <dependency>
+            <groupId>com.fasterxml.uuid</groupId>
+            <artifactId>java-uuid-generator</artifactId>
+            <version>${fasterxml.uuid.version}</version>
+        </dependency> 		
+		
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+	
+
+	<modules>
+		<module>spring-cloud-demo-seq-id-service</module>
+		<module>spring-cloud-demo-eureka-service-1</module>
+		<module>spring-cloud-demo-eureka-service-2</module>
+		<module>spring-cloud-demo-config-service</module>
+		<module>spring-cloud-demo-zuul</module>
+		<module>spring-cloud-demo-web-front</module>
+		<module>spring-cloud-demo-user-service</module>
+		<module>spring-cloud-demo-seq-id-service-api</module>
+		<module>spring-cloud-demo-user-service-api</module>
+		<module>spring-cloud-demo-zipkin-server</module>
+		<module>spring-cloud-demo-user-service-standby-1</module>
+	</modules>
+</project>

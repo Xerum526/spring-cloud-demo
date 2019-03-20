@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.spgcld.demo.mapper.UserMapper" >
+  <resultMap id="UserInfoMap" type="com.spgcld.demo.entity.User" >
+    <id column="USER_ID" property="userId" jdbcType="VARCHAR" />
+    <result column="USER_NAME" property="userName" jdbcType="VARCHAR" />
+    <result column="CODE" property="code" jdbcType="VARCHAR" />
+    <result column="LOGIN_PASSWORD" property="loginPassword" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <select id="queryUserInfo" resultMap="UserInfoMap">
+    select user_id, user_name, code, login_password, pay_password from t_user
+    where userid = #{userId, jdbcType=VARCHAR}
+  </select>
+  
+  <insert id="insertUserInfo" parameterType="com.spgcld.demo.entity.User">
+    insert into t_user(user_id, user_name, code, login_password) 
+               values(#{userId}, #{userName}, #{code}, #{loginPassword})
+  </insert>
+
+</mapper>
